@@ -13,8 +13,11 @@
     </div>
     <div class="items-right">
       <div class="item-right">Item right</div>
-      <div class="item-right"><button class="sign-up">Registrieren</button></div>
+      <div class="item-right"><button class="sign-up">Sign up</button></div>
   </div>
+  </div>
+  <div style="display: flex; justify-content: center; margin-top: 10em">
+    <input class="input">
   </div>
 </body>
 </html>
