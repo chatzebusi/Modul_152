@@ -1,0 +1,33 @@
+.image {
+  width: 20em;
+  box-shadow: 6px 6px 16px 1px #000000, -6px -6px 64px 1px #FFFFFF;
+}
+
+.control-wrapper {
+  margin-top: 3em;
+}
+
+.input-file {
+  display: none;
+}
+
+.label {
+  margin-bottom: 1em;
+  background-color: initial;
+  border-radius: 10px 10px 10px 10px;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-color: black;
+  cursor: pointer;
+  border: 2px solid black;
+  height: 2em;
+  display: flex;
+  align-items: center;
+}
+
+.upload-image-form {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,11 @@
+.item-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button-profile {
+  width: 10em;
+  margin-top: 3em;
+}

@@ -1,7 +1,6 @@
 
 
 .navbar-wrapper {
-/* background-color: #D0CECE; */
 background: rgb(0,237,255);
 background: linear-gradient(90deg, rgba(0,237,255,1) 0%, rgba(207,255,0,1) 61%, rgba(255,0,250,1) 100%);
 justify-content: center;
@@ -11,7 +10,8 @@ padding-left: 1em;
 height: 5em;
 align-items: center;
 box-shadow: 6px 6px 16px 1px #000000, -6px -6px 16px 1px #FFFFFF;
-border-radius: 10px 10px 10px 10px;   
+border-radius: 10px 10px 10px 10px;
+margin-bottom: 3em;
 }
 
 .items-left {
@@ -33,16 +33,3 @@ border-radius: 10px 10px 10px 10px;
 .item.left {
 
 }
-
-.sign-up {
-  cursor: pointer;
-  border-radius: 10px 10px 10px 10px;
-  background-color: initial;
-  border-color: black;
-  height: 3em;
-}
-
-
-.sign-up:active {
-  background-color: #0000003b;
-  }
