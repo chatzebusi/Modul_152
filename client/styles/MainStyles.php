@@ -8,9 +8,7 @@
   require_once('NavigationBarStyle.css');
   require_once('ProfileStyle.css');
   require_once('SettingsStyle.css');
-  require_once('SignUpStyle.css');  
   require_once('UploadedImageStyle.css');
-  require_once('UploadImageStyle.css');
   require_once('VotedImageStyle.css');
 ?>
 
@@ -31,8 +29,9 @@
   border-color: black;
 }
 
-.input:focus {
+input:focus {
   outline-width: 0;
+  outline: none;
 }
 
 .button  {

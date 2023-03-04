@@ -1,13 +1,15 @@
 <?php
 
-function createDatabaseConnection() {
-  // check database connection
-  $database = new mysqli("localhost", "root", "", "modul152");
-  if(!$database) {
-    echo "no connection to database";
-    return false;
-  };
-  
-  return $database;
+function createDatabaseConnection()
+{
+  // create database connection
+  try {
+    $database = new PDO("mysql:host=localhost;dbname=modul152", "root", "");
+    return $database;
+  } catch (Exception $exception) {
+    echo "[ERROR]: Cannot connect to Database" . $exception->getMessage();
+    die();
+  }
+  ;
 }
 ?>

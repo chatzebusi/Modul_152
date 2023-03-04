@@ -1,0 +1,49 @@
+input[type="text" i] {
+  background-color: initial;
+  border-radius: 10px 10px 10px 10px;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-color: black;
+}
+
+input[type="email" i] {
+  background-color: initial;
+  border-radius: 10px 10px 10px 10px;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-color: black;
+}
+
+input[type="password" i] {
+  background-color: initial;
+  border-radius: 10px 10px 10px 10px;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-color: black;
+}
+
+.validation-error {
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+}
+
+.sign-up-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.label {
+  margin-top: 1.5em;
+}
+
+.submit-sign-up {
+  margin-top: 2em;
+}
