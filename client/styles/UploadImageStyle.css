@@ -35,3 +35,19 @@
 .upload-file {
   display: none;
 }
+
+.license-dropdown{
+  display: none;
+  margin-bottom: 1em;
+  background-color: initial;
+  border-radius: 10px 10px 10px 10px;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-color: black;
+  cursor: pointer;
+  border: 2px solid black;
+  height: 2em;
+  align-items: center;
+}
