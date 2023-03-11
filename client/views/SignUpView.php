@@ -1,5 +1,6 @@
 <?php
 require_once('../../server/controllers/SignUpController.php');
+require_once('../styles/MainStyles.php');
 ?>
 
 <!DOCTYPE html>
@@ -44,9 +45,9 @@ require_once('../../server/controllers/SignUpController.php');
       <span class="validation-error">
         <?php echo "$isEmailSetError" ?>
       </span>
-      <!-- <span class="validation-error">
+      <span class="validation-error">
         <?php echo "$emailError" ?>
-      </span> -->
+      </span>
       <label class="label" for="password">Password</label>
       <input maxlength="250" type="password" required name="password">
       <span class="validation-error">
@@ -80,10 +81,6 @@ require_once('../../server/controllers/SignUpController.php');
     window.location.href = link;
   }
 </script>
-
-<?php
-require_once('../styles/MainStyles.php');
-?>
 
 <style>
   <?php
