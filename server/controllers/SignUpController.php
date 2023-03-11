@@ -1,6 +1,6 @@
 <?php
-/* require_once("../models/SignUpModel.php"); */
-require_once("../../server/models/SignUpModel.php");
+require_once("../../server/models/Tables.php");
+
 // define error variables
 $userNameError = "";
 $passwordError = "";
@@ -78,5 +78,13 @@ function userRegistration()
 
   // insert product into database
   $tableUser->insertIntoUser($_POST["userName"], $_POST["email"], $passwordHash);
+
+  // set max time to session
+  session_start();
+  $_SESSION["expiration"] = time() + 3600;
+  $_SESSION["userId"] = $row["user_id"];
+
+  // navigate after successful registration back to login page
+  header("Location: http://localhost/client/views/MenuView.php");
 }
 ?>
