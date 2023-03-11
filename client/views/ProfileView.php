@@ -2,7 +2,7 @@
 // this function will check if user logged in and display depend on status buttons
 if (!isset($_SESSION)) {
   session_start();
-  if (!$_SESSION["userId"]) {
+  if (!isset($_SESSION["userId"])) {
     // go back to menu view
     header("Location: http://localhost/client/views/MenuView.php");
   }
