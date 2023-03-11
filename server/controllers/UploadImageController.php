@@ -1,49 +1,78 @@
-<?php 
-  if (!isset($_POST["submit"])) {
-    return;
-  }
+<?php
+require_once("../../server/models/Tables.php");
 
-  if (!isset($_FILES["image"])) {
-    return;
-  }
-  
-  $fileInformation = $_FILES["image"];
+// if user press logout button destroy session
+if (isset($_POST["logout"])) {
+  session_unset();
+  session_destroy();
+  header("Location: http://localhost/client/views/MenuView.php");
+}
 
-  if ($fileInformation["size"] > 50000000) {
-    return;
-  }
+if (!isset($_POST["submit"])) {
+  return;
+}
 
-  //mkdir("create directory", 0777)
+if (!isset($_FILES["image"])) {
+  return;
+}
+
+$fileInformation = $_FILES["image"];
+
+if ($fileInformation["size"] > 50000000) {
+  return;
+}
+
+$userId = $_SESSION["userId"];
+$directory = "../../server/storage/uploads/" . $userId . "/";
+if (!file_exists($directory)) {
+  mkdir($directory, 0777, true);
+  mkdir($directory . "/thumbnails", 0777, true);
+}
+
+$imageType = mime_content_type($fileInformation["tmp_name"]);
+
+if (!in_array($imageType, array("image/png", "image/jpeg", "image/webp"))) {
+  return;
+}
+
+$fileName = microtime() . ".png";
+if (!move_uploaded_file($fileInformation["tmp_name"], $directory . $fileName)) {
+  echo "the file could not be sended";
+  return;
+}
+
+$image = null;
+
+// TODO add associate array and set function into it
+if ($imageType == "image/png") {
+  $image = imagecreatefrompng($directory . $fileName);
+} else if ($imageType == "image/jpeg") {
+  $image = imagecreatefromjpeg($directory . $fileName);
+} else if ($imageType == "image/webp") {
+  $image = imagecreatefromwebp($directory . $fileName);
+}
+
+$scaledImage = imagescale($image, 128);
+
+imagejpeg($scaledImage, $directory . "thumbnails/" . $fileName, 100);
+
+$imagePath = $directory . $fileName;
+
+$thumbnailPath = $directory . "thumbnails/" . $fileName;
+
+// TODO ISSUE => this statement is multiply times execute
+setImagePath($imagePath, $thumbnailPath);
 
 
 
-  // realtiver pfad von dem upload file (view)
-  // es muss berechtigung für alle auf dem order eingestellt werden damit irgendein benutzer es in dieses Directory uploaden kann
-
-  $imageType = mime_content_type($fileInformation["tmp_name"]);
-
-  if (!in_array($imageType, array("image/png", "image/jpeg", "image/webp"))) {
-    return;
-  }
-
-  $fileName = microtime();
-  if (!move_uploaded_file($fileInformation["tmp_name"], "uploads/" . $fileName)) {
-    echo "the file could not be sended";
-    return;
-  }
-
-  $image = null;
-
-  // TODO make assocative array with all functions and the keys are image/png or the other types
-  if ($imageType == "image/png") {
-    $image = imagecreatefrompng("uploads/" . $fileName);
-  } else if ($imageType == "image/jpeg") {
-    $image = imagecreatefromjpeg("uploads/" . $fileName);
-  } else if ($imageType == "image/webp") {
-    $image = imagecreatefromwebp("uploads/" . $fileName);
-  }
-
-  $scaledImage = imagescale($image, 128);
-
-  imagejpeg($scaledImage, "uploads/thumbnails/" . $fileName, 100);
+/**
+ * this function set image and thumbnail path from storage into database
+ * @author Alessio Englert
+ */
+function setImagepath($imagePath, $thumbnailPath)
+{
+  $tableImage = new Table();
+  $tableImage->tableName = "image";
+  $result = $tableImage->insertImage($imagePath, $thumbnailPath, $_SESSION["userId"]);
+}
 ?>
