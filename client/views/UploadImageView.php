@@ -2,7 +2,7 @@
 // this function will check if user logged in and display depend on status buttons
 if (!isset($_SESSION)) {
   session_start();
-  if (!$_SESSION["userId"]) {
+  if (!isset($_SESSION["userId"])) {
     // go back to menu view
     header("Location: http://localhost/client/views/MenuView.php");
   }
@@ -43,6 +43,8 @@ if (!isset($_SESSION)) {
           <input id="input-tag" class="input-file" type="file" required name="image"
             accept="image/png, image/jpeg, image/webp" />
         </label>
+        <select type="license" name="license" value="License" class="license-dropdown">
+        </select>
         <button onclick="uploadFile()" class="button upload-file" type="submit" name="submit"
           value="Submit">Upload</button>
       </form>
@@ -68,14 +70,32 @@ if (!isset($_SESSION)) {
    */
   const onFilePick = () => {
     document.getElementsByClassName('upload-file')[0].style = 'display: block';
-  }
 
+    document.getElementsByClassName('license-dropdown')[0].style = 'display: block';
+  }
 </script>
 
 <?php
 require_once('../../server/controllers/UploadImageController.php');
 require_once('../styles/MainStyles.php');
 ?>
+
+<script>
+  /** 
+   * this function load all licenses from database to display it in dropdown
+   * @author Alessio Englert
+   */
+  const licenses = <?php echo json_encode($license); ?>
+
+  const dropDown = document.getElementsByClassName("license-dropdown");
+  licenses.forEach((license) => {
+    const option = document.createElement("option");
+    option.text = license.txt;
+    dropDown[0].add(option);
+  })
+
+</script>
+
 
 <style>
   <?php

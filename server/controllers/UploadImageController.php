@@ -1,6 +1,9 @@
 <?php
 require_once("../../server/models/Tables.php");
 
+
+$license = getLicense();
+
 // if user press logout button destroy session
 if (isset($_POST["logout"])) {
   session_unset();
@@ -9,11 +12,11 @@ if (isset($_POST["logout"])) {
 }
 
 if (!isset($_POST["submit"])) {
-  return;
+  return $license;
 }
 
 if (!isset($_FILES["image"])) {
-  return;
+  return $license;
 }
 
 $fileInformation = $_FILES["image"];
@@ -73,6 +76,30 @@ function setImagepath($imagePath, $thumbnailPath)
 {
   $tableImage = new Table();
   $tableImage->tableName = "image";
-  $result = $tableImage->insertImage($imagePath, $thumbnailPath, $_SESSION["userId"]);
+  $result = $tableImage->insertImage($imagePath, $thumbnailPath, $_SESSION["userId"], $_POST['license']);
+}
+
+/**
+ * this function load all license from database
+ * @author Alessio Englert
+ */
+function getLicense()
+{
+  $tableLicense = new Table();
+  $tableLicense->tableName = "licence";
+  $result = $tableLicense->selectLicense();
+
+  $licenses = [];
+
+  while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    $licensesValues = [
+      'txt' => $row['licence_txt'],
+      'link' => $row['licence_link']
+    ];
+    array_push($licenses, $licensesValues);
+  }
+
+
+  return $licenses;
 }
 ?>
