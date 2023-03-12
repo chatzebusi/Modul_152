@@ -28,6 +28,7 @@
 }
 
 .upload-image-form {
+  max-width: 15em;
   display: flex;
   flex-direction: column;
 }
