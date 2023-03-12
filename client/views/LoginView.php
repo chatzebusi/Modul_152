@@ -1,6 +1,37 @@
 <?php
 require_once('../../server/controllers/LoginController.php');
 require_once('../styles/MainStyles.php');
+// this function will check if user logged in and display depend on status buttons
+if (!isset($_SESSION)) {
+  session_start();
+  if (isset($_SESSION["userId"])) {
+    $sessionUserId = $_SESSION["userId"];
+    ?>
+    <style type="text/css">
+      #sign-up {
+        display: none;
+      }
+
+      #login {
+        display: none;
+      }
+    </style>
+    <?php
+  } else {
+    $sessionUserId = null;
+    ?>
+    <style type="text/css">
+      #profile {
+        display: none;
+      }
+
+      #logout {
+        display: none;
+      }
+    </style>
+    <?php
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,9 +50,9 @@ require_once('../styles/MainStyles.php');
       <div class="item-left">Item left</div>
     </div>
     <div class="items-right">
-      <div class="item-right"><button onclick="changeView('http://localhost/client/views/ProfileView.php')"
+      <div id="profile" class="item-right"><button onclick="changeView('http://localhost/client/views/ProfileView.php')"
           class="button">Profile</button></div>
-      <div class="item-right"><button onclick="changeView('http://localhost/client/views/SignUpView.php')"
+      <div id="sign-up" class="item-right"><button onclick="changeView('http://localhost/client/views/SignUpView.php')"
           class="button">Sign Up</button></div>
       <div class="item-right"><button onclick="changeView('http://localhost/client/views/MenuView.php')"
           class="button">Menu</button></div>
