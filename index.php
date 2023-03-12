@@ -1,4 +1,3 @@
-<?php 
-  require_once('./client/styles/MainStyles.php');
-  require_once('./client/views/MenuView.php')
+<?php
+header("Location: http://localhost/client/views/MenuView.php");
 ?>
