@@ -63,8 +63,9 @@ $imagePath = $directory . $fileName;
 
 $thumbnailPath = $directory . "thumbnails/" . $fileName;
 
-// TODO ISSUE => this statement is multiply times execute
 setImagePath($imagePath, $thumbnailPath);
+
+header("Location: http://localhost/client/views/MenuView.php");
 
 
 

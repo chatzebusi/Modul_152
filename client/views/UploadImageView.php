@@ -35,9 +35,11 @@ if (!isset($_SESSION)) {
     </div>
   </div>
   <div class="item-wrapper">
+    <div>Supported file formats are jpg, png and webp, and the maximum size must not exceed 50MB.</div>
     <div class="control-wrapper">
       <form class="upload-image-form" enctype="multipart/form-data" method="POST">
-        <input class="input" type="hidden" name="MAX_FILE_SIZE" value="50000000">
+        <input accept="image/png, image/jpeg, image/webp" class=" input" type="hidden" name="MAX_FILE_SIZE"
+          value="50000000">
         <label onchange="onFilePick()" class="label" for="input-tag">
           Select Image
           <input id="input-tag" class="input-file" type="file" required name="image"
