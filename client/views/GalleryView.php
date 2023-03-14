@@ -50,8 +50,8 @@ if (!isset($_SESSION)) {
     <div class="items-right">
       <div id="profile" class="item-right"><button onclick="changeView('http://localhost/client/views/ProfileView.php')"
           class="button">Profile</button></div>
-      <div class="item-right"><button onclick="changeView('http://localhost/client/views/GalleryView.php')"
-          class="button">Gallery</button></div>
+      <div class="item-right"><button onclick="changeView('http://localhost/client/views/MenuView.php')"
+          class="button">Menu</button></div>
       <form style="margin: 0em" method="POST">
         <div id="logout" class="item-right"><button class="button" type="logout" name="logout">Logout</button></div>
       </form>
@@ -64,7 +64,6 @@ if (!isset($_SESSION)) {
   <!-- Image START -->
   <div class="container">
     <div class="img-container">
-
       <div class="img-content">
       </div>
     </div>
@@ -93,7 +92,7 @@ require_once('../../server/controllers/MenuController.php');
 
 <script type="module">
 
-  import { imageLoad, upVoteImage, downVoteImage } from '../controllers/MenuController.js';
+  import { upVoteImage, downVoteImage } from '../controllers/MenuController.js';
 
   const imagePaths = <?php echo json_encode($imagePaths); ?>
 
@@ -108,8 +107,6 @@ require_once('../../server/controllers/MenuController.php');
     let licenseLink = document.createElement('a');
     let votes = document.createElement('p');
     image.loading = 'lazy';
-
-
 
     licenseTxt.textContent = path.licenseTxt;
     licenseLink.textContent = path.licenseLink;
@@ -173,15 +170,13 @@ require_once('../../server/controllers/MenuController.php');
 
 
     image.src = path.thumbnail;
-    image.className = "homepage-img";
+    image.className = "thumbnail-homepage-img";
     document.getElementsByClassName('img-content')[0].appendChild(upVote);
     document.getElementsByClassName('img-content')[0].appendChild(downVote);
     document.getElementsByClassName('img-content')[0].appendChild(votes);
     document.getElementsByClassName('img-content')[0].appendChild(image);
     document.getElementsByClassName('img-content')[0].appendChild(licenseTxt);
     document.getElementsByClassName('img-content')[0].appendChild(licenseLink);
-
-    image.addEventListener('load', imageLoad(path.image, image))
   });
 
 

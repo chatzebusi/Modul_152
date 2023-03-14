@@ -1,14 +1,10 @@
 <style>
   <?php
   /* Import all css files */
-  require_once('ImageBigStyle.css');
   require_once('LoginStyle.css');
   require_once('MenuStyle.css');
   require_once('NavigationBarStyle.css');
   require_once('ProfileStyle.css');
-  require_once('SettingsStyle.css');
-  require_once('UploadedImageStyle.css');
-  require_once('VotedImageStyle.css');
   ?>
 
   /* MAIN STYLES */

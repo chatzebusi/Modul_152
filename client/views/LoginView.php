@@ -3,7 +3,6 @@ require_once('../../server/controllers/LoginController.php');
 require_once('../styles/MainStyles.php');
 // this function will check if user logged in and display depend on status buttons
 if (!isset($_SESSION)) {
-  session_start();
   if (isset($_SESSION["userId"])) {
     $sessionUserId = $_SESSION["userId"];
     ?>

@@ -34,6 +34,12 @@
   }
 }
 
+.thumbnail-homepage-img {
+  max-width: 10em;
+  box-shadow: 6px 6px 16px 1px #000000, -6px -6px 64px 1px #FFFFFF;
+}
+
+
 .img-content { 
   padding-top: 1em;
   display: flex;

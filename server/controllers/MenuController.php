@@ -5,7 +5,6 @@ require_once("../../server/models/Tables.php");
 if (isset($_POST["logout"])) {
   session_unset();
   session_destroy();
-  header("Location: http://localhost/client/views/MenuView.php");
 }
 
 $tableImage = new Table();
