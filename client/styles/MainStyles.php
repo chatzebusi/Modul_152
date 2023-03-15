@@ -62,6 +62,7 @@
   select {
     font-family: 'Playfair-Display';
     padding-bottom: 0.1em !important;
+    font-size: 14px;
   }
 
   <?php
