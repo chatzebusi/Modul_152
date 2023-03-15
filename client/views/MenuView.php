@@ -45,7 +45,7 @@ if (!isset($_SESSION)) {
 <body class="body">
   <div class="navbar-wrapper">
     <div class="items-left">
-      <div class="item-left">Item left</div>
+      <div class="item-left"><img class="logo" src="../styles/Logo/GalaxyAsteroid.png"></div>
     </div>
     <div class="items-right">
       <div id="profile" class="item-right"><button onclick="changeView('http://localhost/client/views/ProfileView.php')"

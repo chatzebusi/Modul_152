@@ -46,15 +46,15 @@ if (!isset($_SESSION)) {
 <body class="body">
   <div class="navbar-wrapper">
     <div class="items-left">
-      <div class="item-left">Item left</div>
+      <div class="item-left"><img class="logo" src="../styles/Logo/GalaxyAsteroid.png"></div>
     </div>
     <div class="items-right">
       <div id="profile" class="item-right"><button onclick="changeView('http://localhost/client/views/ProfileView.php')"
           class="button">Profile</button></div>
-      <div id="sign-up" class="item-right"><button onclick="changeView('http://localhost/client/views/SignUpView.php')"
-          class="button">Sign Up</button></div>
       <div class="item-right"><button onclick="changeView('http://localhost/client/views/MenuView.php')"
           class="button">Menu</button></div>
+      <div id="sign-up" class="item-right"><button onclick="changeView('http://localhost/client/views/SignUpView.php')"
+          class="button">Sign Up</button></div>
     </div>
   </div>
 

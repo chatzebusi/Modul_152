@@ -25,6 +25,7 @@
   height: 2em;
   display: flex;
   align-items: center;
+  font-family: 'Playfair-Display';
 }
 
 .upload-image-form {
@@ -51,4 +52,8 @@
   border: 2px solid black;
   height: 2em;
   align-items: center;
+}
+
+.images-enclosures {
+  font-family: 'Playfair-Display-Bold';
 }

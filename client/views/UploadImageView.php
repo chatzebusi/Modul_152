@@ -22,7 +22,7 @@ if (!isset($_SESSION)) {
 <body class="body">
   <div class="navbar-wrapper">
     <div class="items-left">
-      <div class="item-left">Item left</div>
+      <div class="item-left"><img class="logo" src="../styles/Logo/GalaxyAsteroid.png"></div>
     </div>
     <div class="items-right">
       <div class="item-right"><button onclick="changeView('http://localhost/client/views/ProfileView.php')"
@@ -35,7 +35,9 @@ if (!isset($_SESSION)) {
     </div>
   </div>
   <div class="item-wrapper">
-    <div>Supported file formats are jpg, png and webp, and the maximum size must not exceed 50MB.</div>
+    <div class="images-enclosures">Supported file formats are jpg, png and webp, and the maximum size must not exceed
+      50MB.
+    </div>
     <div class="control-wrapper">
       <form class="upload-image-form" enctype="multipart/form-data" method="POST">
         <input accept="image/png, image/jpeg, image/webp" class=" input" type="hidden" name="MAX_FILE_SIZE"

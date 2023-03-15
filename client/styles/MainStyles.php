@@ -5,6 +5,7 @@
   require_once('MenuStyle.css');
   require_once('NavigationBarStyle.css');
   require_once('ProfileStyle.css');
+
   ?>
 
   /* MAIN STYLES */
@@ -22,6 +23,7 @@
     padding-left: 0.3em;
     padding-right: 0.3em;
     border-color: black;
+    font-family: 'Playfair-Display';
   }
 
   input:focus {
@@ -35,10 +37,34 @@
     background-color: initial;
     border-color: black;
     height: 3em;
+    font-family: 'Playfair-Display';
   }
 
 
   .button:active {
     background-color: #0000003b;
   }
+
+  .logo {
+    width: 5em;
+  }
+
+  p {
+    font-family: 'Playfair-Display';
+    font-size: 12px;
+  }
+
+  a {
+    font-family: 'Playfair-Display';
+    font-size: 12px;
+  }
+
+  select {
+    font-family: 'Playfair-Display';
+    padding-bottom: 0.1em !important;
+  }
+
+  <?php
+  require_once('fonts.php');
+  ?>
 </style>
