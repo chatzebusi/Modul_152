@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Mrz 2023 um 19:10
+-- Erstellungszeit: 15. Mrz 2023 um 21:13
 -- Server-Version: 10.4.24-MariaDB
 -- PHP-Version: 7.4.29
 
@@ -52,12 +52,13 @@ CREATE TABLE `licence` (
 --
 
 INSERT INTO `licence` (`licence_id`, `licence_txt`, `licence_link`) VALUES
-(1, '4.0 International', 'https://creativecommons.org/licenses/by/4.0/'),
-(2, 'Keine Bearbeitungen 4.0 International', 'https://creativecommons.org/licenses/by-nd/4.0/'),
-(3, 'Weitergabe unter gleichen Bedingungen 4.0 International', 'https://creativecommons.org/licenses/by-sa/4.0/'),
-(4, 'Nicht kommerziell 4.0 International', 'https://creativecommons.org/licenses/by-nc/4.0/'),
-(5, 'Nicht kommerziell - Keine Bearbeitungen 4.0 International', 'https://creativecommons.org/licenses/by-nc-nd/4.0/'),
-(6, 'Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International', 'https://creativecommons.org/licenses/by-nc-sa/4.0/');
+(1, 'all rights reserved', ''),
+(2, 'No edits 4.0 International', 'https://creativecommons.org/licenses/by-nd/4.0/'),
+(3, 'Sharing under the same conditions 4.0 International', 'https://creativecommons.org/licenses/by-sa/4.0/'),
+(4, 'Non-commercial 4.0 International', 'https://creativecommons.org/licenses/by-nc/4.0/'),
+(5, 'Non-commercial - No edits 4.0 International', 'https://creativecommons.org/licenses/by-nc-nd/4.0/'),
+(6, 'Non-commercial - Sharing under the same conditions 4.0 International', 'https://creativecommons.org/licenses/by-nc-sa/4.0/'),
+(7, '4.0 International', 'https://creativecommons.org/licenses/by/4.0/');
 
 -- --------------------------------------------------------
 
@@ -125,25 +126,25 @@ ALTER TABLE `vote`
 -- AUTO_INCREMENT für Tabelle `image`
 --
 ALTER TABLE `image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
 
 --
 -- AUTO_INCREMENT für Tabelle `licence`
 --
 ALTER TABLE `licence`
-  MODIFY `licence_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `licence_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `vote`
 --
 ALTER TABLE `vote`
-  MODIFY `vote_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `vote_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- Constraints der exportierten Tabellen
