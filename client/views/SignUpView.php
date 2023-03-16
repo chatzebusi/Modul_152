@@ -51,10 +51,10 @@ if (!isset($_SESSION)) {
     <div class="items-right">
       <div id="profile" class="item-right"><button onclick="changeView('http://localhost/client/views/ProfileView.php')"
           class="button">Profile</button></div>
-      <div class="item-right"><button onclick="changeView('http://localhost/client/views/LoginView.php')"
-          class="button">Login</button></div>
       <div class="item-right"><button onclick="changeView('http://localhost/client/views/MenuView.php')"
           class="button">Menu</button></div>
+      <div class="item-right"><button onclick="changeView('http://localhost/client/views/LoginView.php')"
+          class="button">Login</button></div>
     </div>
   </div>
 

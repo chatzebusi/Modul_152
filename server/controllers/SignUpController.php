@@ -76,15 +76,19 @@ function userRegistration()
 
   $passwordHash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-  // insert product into database
+  // insert user into database
   $tableUser->insertIntoUser($_POST["userName"], $_POST["email"], $passwordHash);
 
+  $userResult = $tableUser->getUserByEmail($_POST["email"]);
+
   // set max time to session
-  session_start();
-  $_SESSION["expiration"] = time() + 3600;
-  $_SESSION["userId"] = $row["user_id"];
+  while ($row = $userResult->fetch(PDO::FETCH_ASSOC)) {
+    session_start();
+    $_SESSION["expiration"] = time() + 3600;
+    $_SESSION["userId"] = $row["user_id"];
+  }
 
   // navigate after successful registration back to login page
-  header("Location: http://localhost/client/views/MenuView.php");
+  return header("Location: http://localhost/client/views/MenuView.php");
 }
 ?>
